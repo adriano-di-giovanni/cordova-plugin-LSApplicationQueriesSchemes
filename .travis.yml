@@ -1,0 +1,29 @@
+sudo: false
+env:
+  global:
+    - TRAVIS_NODE_VERSION="4.2"
+matrix:
+  include:
+    - env: PLATFORM=ios-9.3
+      os: osx
+      osx_image: xcode8.3
+      language: node_js
+      node_js: '4.2'
+    - env: PLATFORM=ios-10.0
+      os: osx
+      osx_image: xcode8.3
+      language: node_js
+      node_js: '4.2'
+
+before_install:
+  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install ${TRAVIS_NODE_VERSION}
+  - node --version
+  - npm install -g ios-deploy
+  - git clone https://github.com/apache/cordova-paramedic /tmp/paramedic && pushd /tmp/paramedic && npm install && popd
+  - npm install -g cordova
+
+install:
+  npm install
+
+script:
+  - node /tmp/paramedic/main.js --config pr/${PLATFORM} --plugin $(pwd) --justbuild
