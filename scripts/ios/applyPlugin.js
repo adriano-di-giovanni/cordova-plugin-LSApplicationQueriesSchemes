@@ -1,3 +1,5 @@
+var plist = require('plist')
+
 /**
  * Asynchronously merges URL schemes from the `LSApplicationQueriesSchemes.json` file with the
  * URL schemes from the key `LSApplicationQueriesSchemes` of the `*-Info.plist` file.
@@ -6,7 +8,9 @@
 module.exports = function applyPlugin(context) {
     var fs = context.requireCordovaModule('fs')
     var path = context.requireCordovaModule('path')
-    var plist = context.requireCordovaModule('plist')
+
+    // https://github.com/TooTallNate/plist.js/issues/79
+    // var plist = context.requireCordovaModule('plist')
     var Q = context.requireCordovaModule('q')
     var xml = context.requireCordovaModule('cordova-common').xmlHelpers
 

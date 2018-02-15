@@ -2,7 +2,7 @@
 <plugin
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     id="cordova-plugin-lsapplicationqueriesschemes"
-    version="0.1.0">
+    version="0.1.1">
 
     <name>LSApplicationQueriesSchemes</name>
     <description>Dynamically specify the URL schemes the app is able to test using the canOpenURL: method of the UIApplication class</description>
