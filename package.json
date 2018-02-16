@@ -1,6 +1,6 @@
 {
     "name": "cordova-plugin-lsapplicationqueriesschemes",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description":
         "Dynamically specify the URL schemes the app is able to test using the canOpenURL: method of the UIApplication class",
     "main": "index.js",
@@ -40,18 +40,7 @@
         "example": "example"
     },
     "dependencies": {
-        "eslint": "^4.17.0",
-        "eslint-config-prettier": "^2.9.0",
-        "eslint-config-standard": "^11.0.0-beta.0",
-        "eslint-plugin-import": "^2.8.0",
-        "eslint-plugin-node": "^6.0.0",
-        "eslint-plugin-prettier": "^2.6.0",
-        "eslint-plugin-promise": "^3.6.0",
-        "eslint-plugin-standard": "^3.0.1",
-        "husky": "^0.14.3",
-        "lint-staged": "^6.1.0",
-        "plist": "github:xiangpingmeng/plist.js",
-        "prettier": "^1.10.2"
+        "plist": "github:xiangpingmeng/plist.js"
     },
     "repository": {
         "type": "git",
