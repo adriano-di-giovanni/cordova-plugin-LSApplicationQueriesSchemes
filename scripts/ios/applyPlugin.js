@@ -6,12 +6,13 @@ var plist = require('plist')
  * Synchronizes the two sources.
  */
 module.exports = function applyPlugin(context) {
-    var fs = context.requireCordovaModule('fs')
-    var path = context.requireCordovaModule('path')
+    var fs = require('fs')
+    var path = require('path')
 
     // https://github.com/TooTallNate/plist.js/issues/79
     // var plist = context.requireCordovaModule('plist')
-    var Q = context.requireCordovaModule('q')
+    var Q = require('q')
+
     var xml = context.requireCordovaModule('cordova-common').xmlHelpers
 
     return Q.all([Q.nfcall(readPropertyListFile), Q.nfcall(readURLSchemeFile)])

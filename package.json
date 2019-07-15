@@ -1,6 +1,6 @@
 {
     "name": "cordova-plugin-lsapplicationqueriesschemes",
-    "version": "0.1.2",
+    "version": "0.2.0",
     "description":
         "Dynamically specify the URL schemes the app is able to test using the canOpenURL: method of the UIApplication class",
     "main": "index.js",
